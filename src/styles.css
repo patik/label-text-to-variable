@@ -1,0 +1,22 @@
+.App {
+    font-family: sans-serif;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+.output {
+    border: 1px solid #fe57a1;
+    padding: 1em;
+    font-family: Menlo, Consolas, 'Courier New', Courier, monospace;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+code {
+    padding: 1em;
+    /* background-color: silver; */
+}
