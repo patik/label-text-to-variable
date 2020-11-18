@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { camelCase } from 'lodash'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
+import CopyToClipboard from 'react-copy-to-clipboard'
 import TextField from '@material-ui/core/TextField'
-import './styles.css'
 import { Button } from '@material-ui/core'
+import './styles.css'
 
 export default function App() {
     const [input, setInput] = React.useState('')
