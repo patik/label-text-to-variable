@@ -10,12 +10,18 @@ export default function App() {
     const [output, setOutput] = React.useState('')
 
     const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target.value
-        const varName = camelCase(value)
-        const quotedString = value.trim().replace("'", "\\'")
+        const values = event.target.value
+        const lines: string[] = []
 
-        setInput(value)
-        setOutput(`export const ${varName} = '${quotedString}'`)
+        values.split('\n').forEach((value) => {
+            const varName = camelCase(value)
+            const quotedString = value.trim().replace("'", "\\'")
+
+            lines.push(`export const ${varName} = '${quotedString}'`)
+        })
+
+        setInput(values)
+        setOutput(lines.join('\n'))
     }
 
     return (
@@ -30,7 +36,16 @@ export default function App() {
                 autoFocus
                 multiline
             />
-            <p className="output">{output || '(Output...)'}</p>
+            <p className="output">
+                {output
+                    ? output.split('\n').map((line) => (
+                          <React.Fragment key={line}>
+                              {line}
+                              <br />
+                          </React.Fragment>
+                      ))
+                    : '(Output...)'}
+            </p>
             <p>
                 <CopyToClipboard text={output}>
                     <Button variant="contained">Copy to clipboard</Button>
