@@ -1,2 +1,3 @@
 # label-text-to-variable
-Created with CodeSandbox
+
+Converts strings into variables. Primarily for use at InterNations.
