@@ -15,9 +15,17 @@ export default function App() {
 
         values.split('\n').forEach((value) => {
             const varName = camelCase(value)
-            const quotedString = value.trim().replace("'", "\\'")
+            const quotedString = value
+                .trim()
+                .replace(/^"+/g, '')
+                .replace(/^'+/g, '')
+                .replace(/"+$/g, '')
+                .replace(/'+$/g, '')
+                .replace("'", "\\'")
 
-            lines.push(`export const ${varName} = '${quotedString}'`)
+            if (quotedString.length > 0) {
+                lines.push(`export const ${varName} = '${quotedString}'`)
+            }
         })
 
         setInput(values)
@@ -50,6 +58,11 @@ export default function App() {
                 <CopyToClipboard text={output}>
                     <Button variant="contained">Copy to clipboard</Button>
                 </CopyToClipboard>
+            </p>
+            <p className="codesandbox-link">
+                <a href="https://codesandbox.io/s/label-variable-name-1pqzt?file=/src/App.tsx">
+                    Edit on Codesandbox
+                </a>
             </p>
         </div>
     )

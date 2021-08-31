@@ -18,5 +18,13 @@ h1 {
 
 code {
     padding: 1em;
-    /* background-color: silver; */
+}
+
+.codesandbox-link {
+    margin-top: 2em;
+    font-size: xx-small;
+}
+
+.codesandbox-link a {
+    color: gray;
 }
