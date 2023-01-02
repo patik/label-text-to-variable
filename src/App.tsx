@@ -60,9 +60,7 @@ export default function App() {
                 </CopyToClipboard>
             </p>
             <p className="codesandbox-link">
-                <a href="https://codesandbox.io/s/label-variable-name-1pqzt?file=/src/App.tsx">
-                    Edit on Codesandbox
-                </a>
+                <a href="https://codesandbox.io/s/label-variable-name-1pqzt?file=/src/App.tsx">Edit on Codesandbox</a>
             </p>
         </div>
     )
